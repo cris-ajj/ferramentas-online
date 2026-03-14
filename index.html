@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <title>Ferramentas Online</title>
@@ -11,16 +10,45 @@
 
 <div class="container">
 
-<h1>Ferramentas Online</h1>
-<p>Escolha uma calculadora:</p>
+<h1>🧮 Ferramentas Online</h1>
+<p>Calculadoras simples para o dia a dia</p>
 
-<a class="botao" href="porcentagem.html">Calculadora de Porcentagem</a>
-<a class="botao" href="juros.html">Calculadora de Juros</a>
-<a class="botao" href="desconto.html">Calculadora de Desconto</a>
-<a class="botao" href="senha.html">Gerador de Senha</a>
+<div class="card">
+
+<h2>Calculadora de Porcentagem</h2>
+
+<input type="number" id="valor" placeholder="Digite o valor">
+
+<input type="number" id="porcentagem" placeholder="Digite a porcentagem">
+
+<button onclick="calcular()">Calcular</button>
+
+<div class="resultado" id="resultado"></div>
 
 </div>
 
-</body>
+</div>
 
+<script>
+
+function calcular(){
+
+let valor = document.getElementById("valor").value;
+let porcentagem = document.getElementById("porcentagem").value;
+
+if(valor === "" || porcentagem === ""){
+document.getElementById("resultado").innerText = "Preencha os campos.";
+return;
+}
+
+let resultado = (valor * porcentagem) / 100;
+
+document.getElementById("resultado").innerText =
+porcentagem + "% de " + valor + " = " + resultado;
+
+}
+
+</script>
+
+</body>
 </html>
