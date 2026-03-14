@@ -1,37 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Juros</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Juros</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Calculadora de Juros</h1>
-    <a href="index.html" class="voltar">← Voltar</a>
-  </header>
 
-  <main>
-    <label>Capital: <input type="number" id="capital"></label>
-    <label>Taxa (%): <input type="number" id="taxa"></label>
-    <label>Meses: <input type="number" id="meses"></label>
-    <button onclick="calcularJuros()">Calcular</button>
-    <p id="resultado"></p>
-  </main>
+<div class="container">
+  <h1>Calculadora de Juros</h1>
+  <p class="description">Ferramenta rápida para calcular juros simples ou compostos.</p>
 
-  <script>
-    function calcularJuros() {
-      const capital = parseFloat(document.getElementById('capital').value);
-      const taxa = parseFloat(document.getElementById('taxa').value);
-      const meses = parseFloat(document.getElementById('meses').value);
-      if (!isNaN(capital) && !isNaN(taxa) && !isNaN(meses)) {
-        const total = capital * (1 + (taxa/100) * meses);
-        document.getElementById('resultado').innerText = "Valor final: R$ " + total.toFixed(2);
-      } else {
-        document.getElementById('resultado').innerText = "Preencha os campos corretamente!";
-      }
-    }
-  </script>
+  <!-- Coloque aqui a calculadora -->
+
+  <a href="index.html" class="btn">Voltar</a>
+</div>
+
 </body>
 </html>
