@@ -4,31 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Desconto</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Calculadora de Desconto</h1>
+    <a href="index.html" class="voltar">← Voltar</a>
   </header>
+
   <main>
-    <form id="descontoForm">
-      <input type="number" id="valor" placeholder="Valor original">
-      <input type="number" id="desconto" placeholder="Desconto %">
-      <button type="button" onclick="calcularDesconto()">Calcular</button>
-    </form>
+    <label>Preço Original: <input type="number" id="preco"></label>
+    <label>Desconto (%): <input type="number" id="desconto"></label>
+    <button onclick="calcularDesconto()">Calcular</button>
     <p id="resultado"></p>
-    <a href="index.html">Voltar</a>
   </main>
 
   <script>
     function calcularDesconto() {
-      const valor = parseFloat(document.getElementById('valor').value);
+      const preco = parseFloat(document.getElementById('preco').value);
       const desconto = parseFloat(document.getElementById('desconto').value);
-      if (!isNaN(valor) && !isNaN(desconto)) {
-        const resultado = valor - (valor * (desconto / 100));
-        document.getElementById('resultado').textContent = `Valor com desconto: ${resultado}`;
+      if (!isNaN(preco) && !isNaN(desconto)) {
+        const valorFinal = preco - (preco * desconto / 100);
+        document.getElementById('resultado').innerText = "Preço com desconto: R$ " + valorFinal.toFixed(2);
       } else {
-        document.getElementById('resultado').textContent = "Digite valores válidos.";
+        document.getElementById('resultado').innerText = "Preencha os campos corretamente!";
       }
     }
   </script>
