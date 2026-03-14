@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Porcentagem</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Porcentagem</h1>
+  </header>
+  <main>
+    <form id="porcentagemForm">
+      <input type="number" id="valor" placeholder="Valor">
+      <input type="number" id="percent" placeholder="Porcentagem">
+      <button type="button" onclick="calcularPorcentagem()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+    <a href="index.html">Voltar</a>
+  </main>
+
+  <script>
+    function calcularPorcentagem() {
+      const valor = parseFloat(document.getElementById('valor').value);
+      const percent = parseFloat(document.getElementById('percent').value);
+      if (!isNaN(valor) && !isNaN(percent)) {
+        const resultado = valor * (percent / 100);
+        document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+      } else {
+        document.getElementById('resultado').textContent = "Digite valores válidos.";
+      }
+    }
+  </script>
+</body>
+</html>
