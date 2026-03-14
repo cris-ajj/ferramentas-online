@@ -1,0 +1,38 @@
+l<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Juros</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Juros</h1>
+  </header>
+  <main>
+    <form id="jurosForm">
+      <input type="number" id="principal" placeholder="Valor principal">
+      <input type="number" id="taxa" placeholder="Taxa %">
+      <input type="number" id="tempo" placeholder="Período">
+      <button type="button" onclick="calcularJuros()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+    <a href="index.html">Voltar</a>
+  </main>
+
+  <script>
+    function calcularJuros() {
+      const principal = parseFloat(document.getElementById('principal').value);
+      const taxa = parseFloat(document.getElementById('taxa').value);
+      const tempo = parseFloat(document.getElementById('tempo').value);
+      if (!isNaN(principal) && !isNaN(taxa) && !isNaN(tempo)) {
+        const resultado = principal * (1 + taxa / 100 * tempo);
+        document.getElementById('resultado').textContent = `Valor final: ${resultado}`;
+      } else {
+        document.getElementById('resultado').textContent = "Digite valores válidos.";
+      }
+    }
+  </script>
+</body>
+</html>
