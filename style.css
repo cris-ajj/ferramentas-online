@@ -11,20 +11,15 @@ margin:40px auto;
 background:white;
 padding:30px;
 border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-h1{
-margin-bottom:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 input{
 width:90%;
 padding:12px;
 margin:10px 0;
-border:1px solid #ccc;
 border-radius:8px;
-font-size:16px;
+border:1px solid #ccc;
 }
 
 button{
@@ -32,9 +27,9 @@ background:#2d89ef;
 color:white;
 border:none;
 padding:12px 20px;
-font-size:16px;
 border-radius:8px;
 cursor:pointer;
+font-size:16px;
 }
 
 button:hover{
@@ -42,7 +37,7 @@ background:#1b5fad;
 }
 
 .resultado{
-margin-top:20px;
 font-size:20px;
+margin-top:20px;
 font-weight:bold;
 }
