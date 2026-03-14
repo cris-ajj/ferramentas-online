@@ -1,36 +1,35 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Juros</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Calculadora de Juros</h1>
+    <a href="index.html" class="voltar">← Voltar</a>
   </header>
+
   <main>
-    <form id="jurosForm">
-      <input type="number" id="principal" placeholder="Valor principal">
-      <input type="number" id="taxa" placeholder="Taxa %">
-      <input type="number" id="tempo" placeholder="Período">
-      <button type="button" onclick="calcularJuros()">Calcular</button>
-    </form>
+    <label>Capital: <input type="number" id="capital"></label>
+    <label>Taxa (%): <input type="number" id="taxa"></label>
+    <label>Meses: <input type="number" id="meses"></label>
+    <button onclick="calcularJuros()">Calcular</button>
     <p id="resultado"></p>
-    <a href="index.html">Voltar</a>
   </main>
 
   <script>
     function calcularJuros() {
-      const principal = parseFloat(document.getElementById('principal').value);
+      const capital = parseFloat(document.getElementById('capital').value);
       const taxa = parseFloat(document.getElementById('taxa').value);
-      const tempo = parseFloat(document.getElementById('tempo').value);
-      if (!isNaN(principal) && !isNaN(taxa) && !isNaN(tempo)) {
-        const resultado = principal * (1 + taxa / 100 * tempo);
-        document.getElementById('resultado').textContent = `Valor final: ${resultado}`;
+      const meses = parseFloat(document.getElementById('meses').value);
+      if (!isNaN(capital) && !isNaN(taxa) && !isNaN(meses)) {
+        const total = capital * (1 + (taxa/100) * meses);
+        document.getElementById('resultado').innerText = "Valor final: R$ " + total.toFixed(2);
       } else {
-        document.getElementById('resultado').textContent = "Digite valores válidos.";
+        document.getElementById('resultado').innerText = "Preencha os campos corretamente!";
       }
     }
   </script>
