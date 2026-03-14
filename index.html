@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <title>Ferramentas Online</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -11,7 +14,7 @@
 <div class="container">
 
 <h1>🧮 Ferramentas Online</h1>
-<p>Calculadoras simples para o dia a dia</p>
+<p>Calculadora simples para o dia a dia</p>
 
 <div class="card">
 
@@ -33,18 +36,18 @@
 
 function calcular(){
 
-let valor = document.getElementById("valor").value;
-let porcentagem = document.getElementById("porcentagem").value;
+let valor = document.getElementById("valor").value
+let porcentagem = document.getElementById("porcentagem").value
 
 if(valor === "" || porcentagem === ""){
-document.getElementById("resultado").innerText = "Preencha os campos.";
-return;
+document.getElementById("resultado").innerText = "Preencha os campos"
+return
 }
 
-let resultado = (valor * porcentagem) / 100;
+let resultado = (valor * porcentagem) / 100
 
 document.getElementById("resultado").innerText =
-porcentagem + "% de " + valor + " = " + resultado;
+porcentagem + "% de " + valor + " = " + resultado
 
 }
 
