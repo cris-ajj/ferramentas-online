@@ -1,24 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Ferramentas Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <div class="container">
 
-<h1>Calculadora de Porcentagem</h1>
+<h1>Ferramentas Online</h1>
+<p>Escolha uma calculadora:</p>
 
-<input id="valor" placeholder="Digite o valor">
-
-<input id="porcentagem" placeholder="Digite a porcentagem">
-
-<button onclick="calcular()">Calcular</button>
-
-<div class="resultado" id="resultado"></div>
+<a class="botao" href="porcentagem.html">Calculadora de Porcentagem</a>
+<a class="botao" href="juros.html">Calculadora de Juros</a>
+<a class="botao" href="desconto.html">Calculadora de Desconto</a>
+<a class="botao" href="senha.html">Gerador de Senha</a>
 
 </div>
 
-<script>
-function calcular(){
-let valor = document.getElementById("valor").value;
-let porcentagem = document.getElementById("porcentagem").value;
+</body>
 
-let resultado = (valor * porcentagem) / 100;
-
-document.getElementById("resultado").innerText = "Resultado: " + resultado;
-}
-</script>
+</html>
