@@ -1,33 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ferramentas Online</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
 <div class="container">
-  <h1>Ferramentas Online</h1>
-  <p class="description">Calculadoras gratuitas: %, desconto, juros e gerador de senha</p>
 
-  <div class="buttons">
-    <a href="porcentagem.html" class="btn">Calculadora de Porcentagem</a>
-    <a href="desconto.html" class="btn">Calculadora de Desconto</a>
-    <a href="juros.html" class="btn">Calculadora de Juros</a>
-    <a href="senha.html" class="btn">Gerador de Senha</a>
-  </div>
+<h1>Calculadora de Porcentagem</h1>
 
-  <p id="visitantes">Visitantes: 0</p>
+<input id="valor" placeholder="Digite o valor">
+
+<input id="porcentagem" placeholder="Digite a porcentagem">
+
+<button onclick="calcular()">Calcular</button>
+
+<div class="resultado" id="resultado"></div>
+
 </div>
 
 <script>
-  let visitas = localStorage.getItem('visitas') || 0;
-  visitas++;
-  localStorage.setItem('visitas', visitas);
-  document.getElementById('visitantes').textContent = "Visitantes: " + visitas;
-</script>
+function calcular(){
+let valor = document.getElementById("valor").value;
+let porcentagem = document.getElementById("porcentagem").value;
 
-</body>
-</html>
+let resultado = (valor * porcentagem) / 100;
+
+document.getElementById("resultado").innerText = "Resultado: " + resultado;
+}
+</script>
