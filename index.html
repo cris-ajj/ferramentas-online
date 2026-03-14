@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <title>Ferramentas Online</title>
@@ -12,21 +11,56 @@
 <div class="container">
 
 <h1>Ferramentas Online</h1>
-<p>Escolha uma calculadora</p>
+<p>Calculadora de porcentagem</p>
 
 <div class="card">
 
-<a class="botao" href="porcentagem.html">Calculadora de Porcentagem</a>
+<input type="number" id="valor" placeholder="Digite o valor">
 
-<a class="botao" href="juros.html">Calculadora de Juros</a>
+<input type="number" id="porcentagem" placeholder="Digite a porcentagem">
 
-<a class="botao" href="desconto.html">Calculadora de Desconto</a>
+<button onclick="calcular()">Calcular</button>
 
-<a class="botao" href="senha.html">Gerador de Senha</a>
+<div id="resultado"></div>
+
+</div>
+
+<p class="contador">Visitantes: <span id="visitas"></span></p>
 
 </div>
 
-</div>
+<script>
+
+function calcular(){
+
+let valor = Number(document.getElementById("valor").value)
+let porcentagem = Number(document.getElementById("porcentagem").value)
+
+if(!valor || !porcentagem){
+document.getElementById("resultado").innerText = "Digite os valores"
+return
+}
+
+let resultado = (valor * porcentagem) / 100
+
+document.getElementById("resultado").innerText =
+porcentagem + "% de " + valor + " = " + resultado
+
+}
+
+let visitas = localStorage.getItem("visitas")
+
+if(!visitas){
+visitas = 1
+}else{
+visitas = Number(visitas) + 1
+}
+
+localStorage.setItem("visitas", visitas)
+
+document.getElementById("visitas").innerText = visitas
+
+</script>
 
 </body>
 </html>
