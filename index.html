@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ferramentas Online</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="contador.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Calculadoras Online Grátis</h1>
-    <p>%, Desconto, Juros e Gerador de Senha</p>
+    <h1>Ferramentas Online</h1>
+    <p>Calculadoras gratuitas: %, desconto, juros e gerador de senha</p>
   </header>
+
   <main>
-    <nav>
-      <ul>
-        <li><a href="porcentagem.html">Calculadora de Porcentagem</a></li>
-        <li><a href="desconto.html">Calculadora de Desconto</a></li>
-        <li><a href="juros.html">Calculadora de Juros</a></li>
-        <li><a href="senha.html">Gerador de Senha</a></li>
-      </ul>
-    </nav>
+    <ul class="menu">
+      <li><a href="porcentagem.html">Calculadora de Porcentagem</a></li>
+      <li><a href="desconto.html">Calculadora de Desconto</a></li>
+      <li><a href="juros.html">Calculadora de Juros</a></li>
+      <li><a href="senha.html">Gerador de Senha</a></li>
+    </ul>
   </main>
+
+  <footer>
+    <p>Visitantes: <span id="contador">0</span></p>
+  </footer>
 </body>
 </html>
