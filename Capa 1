@@ -1,0 +1,8 @@
+ferramentas-online/
+│
+├─ index.html          ← Página principal com links para cada calculadora
+├─ style.css           ← Todo estilo (layout, cores, inputs, botões)
+├─ porcentagem.html    ← Calculadora de porcentagem
+├─ desconto.html       ← Calculadora de desconto
+├─ juros.html          ← Calculadora de juros
+└─ senha.html          ← Gerador de senha

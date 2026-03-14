@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Juros</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Calculadora de Juros Simples</h1>
+</header>
+
+<div class="container">
+
+<input id="valor" placeholder="Valor inicial">
+
+<input id="juros" placeholder="Juros (%)">
+
+<input id="tempo" placeholder="Tempo">
+
+<button onclick="calcular()">Calcular</button>
+
+<div class="resultado" id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let valor=document.getElementById("valor").value
+
+let juros=document.getElementById("juros").value
+
+let tempo=document.getElementById("tempo").value
+
+let total=valor*(1+(juros/100)*tempo)
+
+document.getElementById("resultado").innerText="Total: "+total
+
+}
+
+</script>
+
+</body>
+</html>
