@@ -4,31 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Porcentagem</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Calculadora de Porcentagem</h1>
+    <a href="index.html" class="voltar">← Voltar</a>
   </header>
+
   <main>
-    <form id="porcentagemForm">
-      <input type="number" id="valor" placeholder="Valor">
-      <input type="number" id="percent" placeholder="Porcentagem">
-      <button type="button" onclick="calcularPorcentagem()">Calcular</button>
-    </form>
+    <label>Valor Total: <input type="number" id="valor"></label>
+    <label>Percentual (%): <input type="number" id="percentual"></label>
+    <button onclick="calcular()">Calcular</button>
     <p id="resultado"></p>
-    <a href="index.html">Voltar</a>
   </main>
 
   <script>
-    function calcularPorcentagem() {
+    function calcular() {
       const valor = parseFloat(document.getElementById('valor').value);
-      const percent = parseFloat(document.getElementById('percent').value);
-      if (!isNaN(valor) && !isNaN(percent)) {
-        const resultado = valor * (percent / 100);
-        document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+      const percentual = parseFloat(document.getElementById('percentual').value);
+      if (!isNaN(valor) && !isNaN(percentual)) {
+        document.getElementById('resultado').innerText = "Resultado: " + ((valor * percentual)/100).toFixed(2);
       } else {
-        document.getElementById('resultado').textContent = "Digite valores válidos.";
+        document.getElementById('resultado').innerText = "Preencha os campos corretamente!";
       }
     }
   </script>
