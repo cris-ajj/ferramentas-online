@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Porcentagem</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Porcentagem</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Calculadora de Porcentagem</h1>
-    <a href="index.html" class="voltar">← Voltar</a>
-  </header>
 
-  <main>
-    <label>Valor Total: <input type="number" id="valor"></label>
-    <label>Percentual (%): <input type="number" id="percentual"></label>
-    <button onclick="calcular()">Calcular</button>
-    <p id="resultado"></p>
-  </main>
+<div class="container">
+  <h1>Calculadora de Porcentagem</h1>
+  <p class="description">Ferramenta rápida para calcular porcentagem.</p>
 
-  <script>
-    function calcular() {
-      const valor = parseFloat(document.getElementById('valor').value);
-      const percentual = parseFloat(document.getElementById('percentual').value);
-      if (!isNaN(valor) && !isNaN(percentual)) {
-        document.getElementById('resultado').innerText = "Resultado: " + ((valor * percentual)/100).toFixed(2);
-      } else {
-        document.getElementById('resultado').innerText = "Preencha os campos corretamente!";
-      }
-    }
-  </script>
+  <!-- Coloque aqui a calculadora -->
+
+  <a href="index.html" class="btn">Voltar</a>
+</div>
+
 </body>
 </html>
