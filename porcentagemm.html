@@ -9,13 +9,36 @@
 <body>
 
 <div class="container">
-  <h1>Calculadora de Porcentagem</h1>
-  <p class="description">Ferramenta rápida para calcular porcentagem.</p>
+<h1>Calculadora de Porcentagem</h1>
 
-  <!-- Coloque aqui a calculadora -->
+<input id="valor" placeholder="Digite o valor">
+<input id="porcentagem" placeholder="Digite a porcentagem">
 
-  <a href="index.html" class="btn">Voltar</a>
+<button onclick="calcular()">Calcular</button>
+<button onclick="limpar()">Limpar</button>
+
+<h2 id="resultado"></h2>
+
+<a href="index.html">⬅ Voltar</a>
 </div>
 
+<script>
+function calcular() {
+    let valor = parseFloat(document.getElementById("valor").value);
+    let porcentagem = parseFloat(document.getElementById("porcentagem").value);
+    if(!isNaN(valor) && !isNaN(porcentagem)) {
+        let resultado = (valor * porcentagem) / 100;
+        document.getElementById("resultado").innerText = "Resultado: " + resultado;
+    } else {
+        document.getElementById("resultado").innerText = "Digite números válidos!";
+    }
+}
+
+function limpar() {
+    document.getElementById("valor").value = "";
+    document.getElementById("porcentagem").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+</script>
 </body>
 </html>
