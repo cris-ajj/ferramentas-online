@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Porcentagem</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
 <div class="container">
-<h1>Calculadora de Porcentagem</h1>
 
-<input id="valor" placeholder="Digite o valor" type="number">
-<input id="porcentagem" placeholder="Digite a porcentagem" type="number">
+<h1>🧮 Ferramentas Online</h1>
 
-<button onclick="calcular()">Calcular</button>
-<button onclick="limpar()">Limpar</button>
+<a href="porcentagem.html">Calculadora de Porcentagem</a>
 
-<h2 id="resultado"></h2>
-<a href="index.html">⬅ Voltar</a>
+<a href="desconto.html">Calculadora de Desconto</a>
+
+<a href="juros.html">Calculadora de Juros</a>
+
+<a href="senha.html">Gerador de Senha</a>
+
 </div>
-
-<script>
-function calcular() {
-    let valor = parseFloat(document.getElementById("valor").value);
-    let porcentagem = parseFloat(document.getElementById("porcentagem").value);
-    if(!isNaN(valor) && !isNaN(porcentagem)) {
-        let resultado = (valor * porcentagem) / 100;
-        document.getElementById("resultado").innerText = "Resultado: " + resultado.toFixed(2);
-    } else {
-        document.getElementById("resultado").innerText = "Digite números válidos!";
-    }
-}
-
-function limpar() {
-    document.getElementById("valor").value = "";
-    document.getElementById("porcentagem").value = "";
-    document.getElementById("resultado").innerText = "";
-}
-</script>
-
-</body>
-</html>
