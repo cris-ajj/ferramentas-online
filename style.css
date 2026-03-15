@@ -1,50 +1,107 @@
-body{
-font-family: Arial, sans-serif;
-background:#e8f5e9;
-margin:0;
-text-align:center;
+/* style.css - layout profissional */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.container{
-max-width:400px;
-margin:80px auto;
+.header {
+    background-color: #2e7d32;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+.menu {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
 }
 
-input{
-width:90%;
-padding:12px;
-margin:10px 0;
-border-radius:6px;
-border:1px solid #ccc;
+.menu a {
+    text-decoration: none;
+    color: white;
+    background-color: #2e7d32;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.2s;
 }
 
-button{
-background:#2e7d32;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:6px;
-cursor:pointer;
+.menu a:hover {
+    background-color: #145a32;
 }
 
-button:hover{
-background:#1b5e20;
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#resultado{
-margin-top:20px;
-font-size:20px;
-font-weight:bold;
+h1 {
+    color: #2e7d32;
+    margin-bottom: 20px;
 }
 
-.contador{
-margin-top:20px;
-color:#444;
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #145a32;
+}
+
+h2 {
+    color: #2e7d32;
+    word-break: break-word; /* evita que textos grandes saiam do container */
+}
+
+@media (max-width: 450px) {
+    .header {
+        font-size: 20px;
+    }
+    .menu a {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+    input, button {
+        font-size: 14px;
+    }
 }
