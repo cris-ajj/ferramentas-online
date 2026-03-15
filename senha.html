@@ -9,13 +9,36 @@
 <body>
 
 <div class="container">
-  <h1>Gerador de Senha</h1>
-  <p class="description">Crie senhas seguras de forma rápida e prática.</p>
+<h1>Gerador de Senha</h1>
 
-  <!-- Coloque aqui o gerador de senha -->
+<input id="tamanho" placeholder="Tamanho da senha">
 
-  <a href="index.html" class="btn">Voltar</a>
+<button onclick="gerarSenha()">Gerar Senha</button>
+<button onclick="limpar()">Limpar</button>
+
+<h2 id="resultado"></h2>
+<a href="index.html">⬅ Voltar</a>
 </div>
 
+<script>
+function gerarSenha() {
+    let tamanho = parseInt(document.getElementById("tamanho").value);
+    if(!isNaN(tamanho) && tamanho > 0) {
+        let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+        let senha = "";
+        for(let i=0;i<tamanho;i++){
+            senha += chars.charAt(Math.floor(Math.random()*chars.length));
+        }
+        document.getElementById("resultado").innerText = senha;
+    } else {
+        document.getElementById("resultado").innerText = "Digite um número válido!";
+    }
+}
+
+function limpar() {
+    document.getElementById("tamanho").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+</script>
 </body>
 </html>
