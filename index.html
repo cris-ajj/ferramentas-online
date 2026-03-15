@@ -2,81 +2,43 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Ferramentas Online</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Porcentagem</title>
 <link rel="stylesheet" href="style.css">
-
-<style>
-body{
-font-family:Arial;
-background:#f4f4f4;
-margin:0;
-}
-
-header{
-background:#2563eb;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-.container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-width:220px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-text-align:center;
-}
-
-.card a{
-text-decoration:none;
-color:#2563eb;
-font-weight:bold;
-}
-
-.card:hover{
-transform:scale(1.05);
-transition:0.2s;
-}
-</style>
-
 </head>
-
 <body>
 
-<header>
-<h1>Ferramentas Online</h1>
-<p>Calculadoras úteis e rápidas</p>
-</header>
-
 <div class="container">
+<h1>Calculadora de Porcentagem</h1>
 
-<div class="card">
-<a href="porcentagem.html">Calculadora de Porcentagem</a>
+<input id="valor" placeholder="Digite o valor" type="number">
+<input id="porcentagem" placeholder="Digite a porcentagem" type="number">
+
+<button onclick="calcular()">Calcular</button>
+<button onclick="limpar()">Limpar</button>
+
+<h2 id="resultado"></h2>
+<a href="index.html">⬅ Voltar</a>
 </div>
 
-<div class="card">
-<a href="juros.html">Calculadora de Juros</a>
-</div>
+<script>
+function calcular() {
+    let valor = parseFloat(document.getElementById("valor").value);
+    let porcentagem = parseFloat(document.getElementById("porcentagem").value);
+    if(!isNaN(valor) && !isNaN(porcentagem)) {
+        let resultado = (valor * porcentagem) / 100;
+        document.getElementById("resultado").innerText = "Resultado: " + resultado.toFixed(2);
+    } else {
+        document.getElementById("resultado").innerText = "Digite números válidos!";
+    }
+}
 
-<div class="card">
-<a href="desconto.html">Calculadora de Desconto</a>
-</div>
-
-<div class="card">
-<a href="senha.html">Gerador de Senha</a>
-</div>
-
-</div>
+function limpar() {
+    document.getElementById("valor").value = "";
+    document.getElementById("porcentagem").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+</script>
 
 </body>
 </html>
