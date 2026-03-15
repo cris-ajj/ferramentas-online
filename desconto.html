@@ -9,13 +9,35 @@
 <body>
 
 <div class="container">
-  <h1>Calculadora de Desconto</h1>
-  <p class="description">Ferramenta rápida para calcular desconto.</p>
+<h1>Calculadora de Desconto</h1>
 
-  <!-- Coloque aqui a calculadora -->
+<input id="preco" placeholder="Preço original">
+<input id="desconto" placeholder="Desconto (%)">
 
-  <a href="index.html" class="btn">Voltar</a>
+<button onclick="calcularDesconto()">Calcular</button>
+<button onclick="limpar()">Limpar</button>
+
+<h2 id="resultado"></h2>
+<a href="index.html">⬅ Voltar</a>
 </div>
 
+<script>
+function calcularDesconto() {
+    let preco = parseFloat(document.getElementById("preco").value);
+    let desconto = parseFloat(document.getElementById("desconto").value);
+    if(!isNaN(preco) && !isNaN(desconto)) {
+        let resultado = preco - (preco * desconto / 100);
+        document.getElementById("resultado").innerText = "Preço com desconto: " + resultado.toFixed(2);
+    } else {
+        document.getElementById("resultado").innerText = "Digite números válidos!";
+    }
+}
+
+function limpar() {
+    document.getElementById("preco").value = "";
+    document.getElementById("desconto").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+</script>
 </body>
 </html>
